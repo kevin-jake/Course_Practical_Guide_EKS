@@ -14,7 +14,8 @@ service:
   port: 80
   name: front-end-service
 
-resources: {}
+resources:
+  {}
   # limits:
   #  cpu: 100m
   #  memory: 128Mi
@@ -30,8 +31,8 @@ affinity: {}
 
 # REMEMBER TO TEST WHETHER THIS IS REALLY REQUIRED
 api:
-  url: https://api.dev.mariomerco.com/
-  resource_api: https://resource-api.dev.mariomerco.com/
-  inventory_api: https://inventory-api.dev.mariomerco.com/
-  renting_api: https://renting-api.dev.mariomerco.com/
-  clients_api: https://clients-api.dev.mariomerco.com/
+  url: https://api.devkevinjake.cf/
+  resource_api: https://resource-api.devkevinjake.cf/
+  inventory_api: https://inventory-api.devkevinjake.cf/
+  renting_api: https://renting-api.devkevinjake.cf/
+  clients_api: https://clients-api.devkevinjake.cf/

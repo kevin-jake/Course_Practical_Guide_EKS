@@ -14,7 +14,8 @@ service:
   port: 80
   name: front-end-service
 
-resources: {}
+resources:
+  {}
   # limits:
   #  cpu: 100m
   #  memory: 128Mi
@@ -29,4 +30,4 @@ tolerations: []
 affinity: {}
 
 api:
-  url: https://api.dev.mariomerco.com
+  url: https://api.devkevinjake.cf

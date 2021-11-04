@@ -4,4 +4,4 @@ image:
   repository: 750796802028.dkr.ecr.ap-southeast-1.amazonaws.com/bookstore.front-end
 
 api:
-  url: https://api.mariomerco.com
+  url: https://apikevinjake.cf

@@ -3,8 +3,8 @@ image:
 
 # REMEMBER TO TEST WHETHER THIS IS REALLY REQUIRED
 api:
-  url: https://api.mariomerco.com
-  resource_api: https://resource-api.mariomerco.com/
-  inventory_api: https://inventory-api.mariomerco.com/
-  renting_api: https://renting-api.mariomerco.com/
-  clients_api: https://clients-api.mariomerco.com/
+  url: https://apikevinjake.cf
+  resource_api: https://resource-apikevinjake.cf/
+  inventory_api: https://inventory-apikevinjake.cf/
+  renting_api: https://renting-apikevinjake.cf/
+  clients_api: https://clients-apikevinjake.cf/
