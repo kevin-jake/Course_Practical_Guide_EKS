@@ -35,18 +35,10 @@ ingress:
       alb.ingress.kubernetes.io/load-balancer-attributes: "idle_timeout.timeout_seconds=360"
     path: /
     hosts:
-<<<<<<< HEAD
       - hostname: bookstore.kevinjake.cf
         serviceName: front-end-service
         port: 80
 
       - hostname: api.kevinjake.cf
-=======
-      - hostname: bookstorekevinjake.cf
-        serviceName: front-end-service
-        port: 80
-
-      - hostname: apikevinjake.cf
->>>>>>> a4187763daf45a520ee5b63724a1f5edcd545a21
         serviceName: front-end-service-proxy
         port: 80
