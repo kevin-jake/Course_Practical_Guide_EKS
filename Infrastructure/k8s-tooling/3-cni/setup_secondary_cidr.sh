@@ -1,5 +1,5 @@
 cluster_stack_name="eksctl-eks-acg-cluster"
-region="us-east-2"
+region="ap-southeast-1"
 cluster_name="eks-acg"
 secondary_cidr="100.64.0.0/16"
 subnet_a_cidr="100.64.0.0/19"

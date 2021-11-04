@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     APP: front-end
-    ECR_URL: 750796802028.dkr.ecr.us-east-2.amazonaws.com
+    ECR_URL: 750796802028.dkr.ecr.ap-southeast-1.amazonaws.com
     ECR_REPO_NAME: bookstore.front-end
 
 phases:
@@ -12,13 +12,11 @@ phases:
       - source `pwd`/version
       - COMMIT_ID_SHORT=`echo "${CODEBUILD_RESOLVED_SOURCE_VERSION}" | cut -c1-8`
       - TAG=`echo "${MAJOR}.${MINOR}.${COMMIT_ID_SHORT}"`
-      - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin ${ECR_URL}
-  build:  
+      - aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin ${ECR_URL}
+  build:
     commands:
       - docker build -t ${APP}:${TAG} -f Dockerfile .
       - docker tag ${APP}:${TAG} ${ECR_URL}/${ECR_REPO_NAME}:${TAG}
   post_build:
     commands:
       - docker push ${ECR_URL}/${ECR_REPO_NAME}:${TAG}
-
-      

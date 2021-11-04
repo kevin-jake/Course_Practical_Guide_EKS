@@ -11,13 +11,14 @@ image:
 
 service:
   type: NodePort
-  port: 5000   
+  port: 5000
   name: resource-api-service
 
 aws:
-  region: us-east-2
+  region: ap-southeast-1
 
-resources: {}
+resources:
+  {}
   # limits:
   #  cpu: 100m
   #  memory: 128Mi

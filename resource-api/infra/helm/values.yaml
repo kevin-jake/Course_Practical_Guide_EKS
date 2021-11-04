@@ -15,9 +15,10 @@ service:
   name: resource-api-service
 
 aws:
-  region: us-east-2
+  region: ap-southeast-1
 
-resources: {}
+resources:
+  {}
   # limits:
   #  cpu: 100m
   #  memory: 128Mi
