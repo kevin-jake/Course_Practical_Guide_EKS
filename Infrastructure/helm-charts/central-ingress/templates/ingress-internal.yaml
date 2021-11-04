@@ -14,15 +14,13 @@ metadata:
 spec:
   rules:
   {{- range .Values.ingress.internal.hosts }}
-    - host: {{ .hostname }}
-      http:
-        paths:
-          - path: /*
+  - host: {{ .hostname }}
+    http:
+      paths:
+        - path: /*
             backend:
-              serviceName: redirect
-              servicePort: use-annotation
-          - path: /*
-            backend:
-              serviceName: {{ .serviceName }}
-              servicePort: {{ .port }}
+              service:
+                name: {{ .serviceName }}
+                port: 
+                  number:  {{ .port }}
   {{- end }}

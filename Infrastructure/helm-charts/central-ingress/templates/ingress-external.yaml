@@ -1,5 +1,5 @@
 {{- if .Values.ingress.external }}
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ template "central-ingress.name" . }}-external
@@ -15,16 +15,14 @@ metadata:
 spec:
   rules:
   {{- range .Values.ingress.external.hosts }}
-    - host: {{ .hostname }}
+  - host: {{ .hostname }}
       http:
         paths:
-          - path: /*
-            backend:
-              serviceName: redirect
-              servicePort: use-annotation
-          - path: /*
-            backend:
-              serviceName: {{ .serviceName }}
-              servicePort: {{ .port }}
+          path: /*
+        - backend:
+            service:
+              name: {{ .serviceName }}
+              port: 
+                number: {{ .port }}
   {{- end }}
 {{- end }}
