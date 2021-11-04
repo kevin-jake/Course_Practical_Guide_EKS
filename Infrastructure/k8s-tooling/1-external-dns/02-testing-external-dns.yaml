@@ -3,19 +3,19 @@ kind: Service
 metadata:
   name: nginx
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: app.yourdns.com
+    external-dns.alpha.kubernetes.io/hostname: testexternal.dev.kevinjake.cf
     # service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:{region}:{account}:certificate/{id}
     # service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
     # service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "https"
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
-    name: http
-    targetPort: 80
-  - port: 443
-    name: https
-    targetPort: 80
+    - port: 80
+      name: http
+      targetPort: 80
+    - port: 443
+      name: https
+      targetPort: 80
   selector:
     app: nginx
 ---
@@ -33,8 +33,8 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: nginx
-        name: nginx
-        ports:
-        - containerPort: 80
-          name: http
+        - image: nginx
+          name: nginx
+          ports:
+            - containerPort: 80
+              name: http

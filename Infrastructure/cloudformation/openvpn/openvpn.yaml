@@ -1,11 +1,11 @@
-AWSTemplateFormatVersion: '2010-09-09'
+AWSTemplateFormatVersion: "2010-09-09"
 Description: OpenVPN Setup
 
 Parameters:
   NodeImageId:
     Description: The OpenVPN AMI Id
     Type: AWS::EC2::Image::Id
-    Default: ami-0461dc52a3f299bf7
+    Default: ami-0a8fdce33ca9cbe51
 
   NodeVolumeSize:
     Description: The size of the hard drive of the machines (GBs)
@@ -31,7 +31,7 @@ Parameters:
     Type: Number
     Description: Maximum size of Node Group ASG.
     Default: 1
-  
+
   SubnetIDs:
     Type: List<AWS::EC2::Subnet::Id>
     Description: The list of the subnets where the app can be deployed
@@ -56,8 +56,7 @@ Parameters:
     Type: String
     NoEcho: true
 
-
-Resources: 
+Resources:
   NodeSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -111,39 +110,39 @@ Resources:
     Type: AWS::IAM::Role
     Properties:
       AssumeRolePolicyDocument:
-        Version: '2012-10-17'
+        Version: "2012-10-17"
         Statement:
-        - Effect: Allow
-          Principal:
-            Service:
-            - ec2.amazonaws.com
-          Action:
-          - sts:AssumeRole
+          - Effect: Allow
+            Principal:
+              Service:
+                - ec2.amazonaws.com
+            Action:
+              - sts:AssumeRole
       Path: "/"
 
   NodeRolePolicies:
     Type: AWS::IAM::Policy
     Properties:
       PolicyName: !Join
-        - '-'
+        - "-"
         - - openvpn
           - role
       PolicyDocument:
-        Version: '2012-10-17'
+        Version: "2012-10-17"
         Statement:
-        - Effect: Deny
-          Action:
-            - "*"
-          Resource: "*"
+          - Effect: Deny
+            Action:
+              - "*"
+            Resource: "*"
       Roles:
-      - !Ref NodeRole
+        - !Ref NodeRole
 
   NodeInstanceProfile:
     Type: AWS::IAM::InstanceProfile
     Properties:
       Path: "/openvpn/"
       Roles:
-      - !Ref NodeRole
+        - !Ref NodeRole
 
   NodeGroup:
     Type: AWS::AutoScaling::AutoScalingGroup
@@ -168,19 +167,18 @@ Resources:
       ImageId: !Ref NodeImageId
       KeyName: !Ref KeyName
       SecurityGroups:
-      - !Ref NodeSecurityGroup
+        - !Ref NodeSecurityGroup
       IamInstanceProfile: !Ref NodeInstanceProfile
       BlockDeviceMappings:
-      - DeviceName: /dev/xvda
-        Ebs:
-          VolumeSize: 
-            Ref: NodeVolumeSize
-          VolumeType: gp2
-          DeleteOnTermination: true
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize:
+              Ref: NodeVolumeSize
+            VolumeType: gp2
+            DeleteOnTermination: true
       UserData:
-        Fn::Base64:
-          !Sub |
-            #!/bin/bash
-            sudo /usr/local/openvpn_as/scripts/sacli --key "vpn.server.routing.private_network.1" --value "${VPCCidr}" ConfigPut
-            sudo /usr/local/openvpn_as/scripts/sacli --user ${VpnInitialUsername} --new_pass ${VpnInitialPassword} SetLocalPassword
-            sudo /usr/local/openvpn_as/scripts/sacli start
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          sudo /usr/local/openvpn_as/scripts/sacli --key "vpn.server.routing.private_network.1" --value "${VPCCidr}" ConfigPut
+          sudo /usr/local/openvpn_as/scripts/sacli --user ${VpnInitialUsername} --new_pass ${VpnInitialPassword} SetLocalPassword
+          sudo /usr/local/openvpn_as/scripts/sacli start
