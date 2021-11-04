@@ -19,7 +19,8 @@ spec:
       http:
         paths:
           path: /*
-        - backend:
+          pathType: Prefix
+          backend:
             service:
               name: {{ .serviceName }}
               port: 
