@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://git-codecommit.us-east-2.amazonaws.com/v1/repos/acg.eks.bookstore.inventory-api"
+    "url": "https://git-codecommit.us-east-1.amazonaws.com/v1/repos/acg.eks.bookstore.inventory-api"
   },
   "author": "Mario Mercado",
   "license": "ISC",

@@ -3,7 +3,7 @@ kubectl apply -k "https://github.com/aws/eks-charts/stable/appmesh-controller/cr
 kubectl create ns appmesh-system
 
 export CLUSTER_NAME=eks-acg
-export AWS_REGION=us-east-2
+export AWS_REGION=us-east-1
 
 eksctl create iamserviceaccount \
     --cluster $CLUSTER_NAME \
