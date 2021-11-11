@@ -5,7 +5,7 @@
     "Region": {
       "Description": "The AWS Region",
       "Type": "String",
-      "Default": "ap-southeast-1"
+      "Default": "us-east-2"
     },
     "VPCID": {
       "Description": "The VPC where the Subnets will be created",
