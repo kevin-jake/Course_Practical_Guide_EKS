@@ -15,4 +15,8 @@ nodeGroups:
     desiredCapacity: 3
     privateNetworking: true
 
-availabilityZones: us-east-1a,us-east-1b,us-east-1c,us-east-1c,us-east-1d
+availabilityZones: 
+  - us-east-1a
+  - us-east-1b
+  - us-east-1c
+  - us-east-1d
