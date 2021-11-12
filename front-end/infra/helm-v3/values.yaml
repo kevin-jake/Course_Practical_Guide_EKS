@@ -31,8 +31,8 @@ affinity: {}
 
 # REMEMBER TO TEST WHETHER THIS IS REALLY REQUIRED
 api:
-  url: https://api.dev.kevinjake.cf/
-  resource_api: https://resource-api.dev.kevinjake.cf/
-  inventory_api: https://inventory-api.dev.kevinjake.cf/
-  renting_api: https://renting-api.dev.kevinjake.cf/
-  clients_api: https://clients-api.dev.kevinjake.cf/
+  url: https://api.dev.testjek.cf/
+  resource_api: https://resource-api.dev.testjek.cf/
+  inventory_api: https://inventory-api.dev.testjek.cf/
+  renting_api: https://renting-api.dev.testjek.cf/
+  clients_api: https://clients-api.dev.testjek.cf/

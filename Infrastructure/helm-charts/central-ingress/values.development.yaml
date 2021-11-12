@@ -10,26 +10,26 @@ ingress:
       alb.ingress.kubernetes.io/load-balancer-attributes: "idle_timeout.timeout_seconds=360"
     path: /
     hosts:
-      - hostname: renting-api.dev.kevinjake.cf
+      - hostname: renting-api.dev.testjek.cf
         serviceName: renting-api-service
         port: 80
 
-      - hostname: resource-api.dev.kevinjake.cf
+      - hostname: resource-api.dev.testjek.cf
         serviceName: resource-api-service
         port: 80
 
-      - hostname: inventory-api.dev.kevinjake.cf
+      - hostname: inventory-api.dev.testjek.cf
         serviceName: inventory-api-service
         port: 80
 
-      - hostname: clients-api.dev.kevinjake.cf
+      - hostname: clients-api.dev.testjek.cf
         serviceName: clients-api-service
         port: 80
 
-      - hostname: bookstore.dev.kevinjake.cf
+      - hostname: bookstore.dev.testjek.cf
         serviceName: front-end-service
         port: 80
 
-      - hostname: api.dev.kevinjake.cf
+      - hostname: api.dev.testjek.cf
         serviceName: front-end-service-proxy
         port: 80

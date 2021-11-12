@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  resourceApi: "https://api.kevinjake.cf/resources-api",
-  inventoryApi: "https://api.kevinjake.cf/inventory-api",
-  clientApi: "https://api.kevinjake.cf/clients-api",
-  rentingApi: "https://api.kevinjake.cf/renting-api",
+  resourceApi: "https://api.testjek.cf/resources-api",
+  inventoryApi: "https://api.testjek.cf/inventory-api",
+  clientApi: "https://api.testjek.cf/clients-api",
+  rentingApi: "https://api.testjek.cf/renting-api",
 };
