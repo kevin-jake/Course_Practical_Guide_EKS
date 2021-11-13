@@ -3,8 +3,8 @@ image:
 
 # REMEMBER TO TEST WHETHER THIS IS REALLY REQUIRED
 api:
-  url: https://api.testjek.cf
-  resource_api: https://resource-api.testjek.cf/
-  inventory_api: https://inventory-api.testjek.cf/
-  renting_api: https://renting-api.testjek.cf/
-  clients_api: https://clients-api.testjek.cf/
+  url: https://api.kevinjake.cf
+  resource_api: https://resource-api.kevinjake.cf/
+  inventory_api: https://inventory-api.kevinjake.cf/
+  renting_api: https://renting-api.kevinjake.cf/
+  clients_api: https://clients-api.kevinjake.cf/

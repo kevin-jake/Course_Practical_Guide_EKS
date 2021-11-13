@@ -30,4 +30,4 @@ tolerations: []
 affinity: {}
 
 api:
-  url: https://api.dev.testjek.cf
+  url: https://api.dev.kevinjake.cf

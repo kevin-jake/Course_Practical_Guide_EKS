@@ -11,7 +11,7 @@
     "DomainName": {
       "Description": "The domain name",
       "Type": "String",
-      "Default": "testjek.cf"
+      "Default": "kevinjake.cf"
     },
     "DeployHostedZone": {
       "Description": "Define whether deploy the hosted zone or not",

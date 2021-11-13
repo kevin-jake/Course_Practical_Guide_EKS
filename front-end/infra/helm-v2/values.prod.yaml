@@ -4,4 +4,4 @@ image:
   repository: 750796802028.dkr.ecr.us-east-1.amazonaws.com/bookstore.front-end
 
 api:
-  url: https://api.testjek.cf
+  url: https://api.kevinjake.cf
