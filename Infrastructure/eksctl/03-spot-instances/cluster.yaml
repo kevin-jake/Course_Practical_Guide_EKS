@@ -17,3 +17,9 @@ nodeGroups:
       instanceTypes: ["t3.medium", "t3a.medium"]
       onDemandPercentageAboveBaseCapacity: 0
     labels: { lifecycle: Ec2Spot }
+
+availabilityZones:
+  - us-east-1a
+  - us-east-1b
+  - us-east-1c
+  - us-east-1d
